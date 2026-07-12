@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>이시욱 이력서</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap');
+  :root {
+    --text: rgb(0,0,0);
+    --text-soft: rgb(44,44,43);
+    --text-gray: rgb(120,119,116);
+    --blue: rgb(56,125,201);
+    --rule: rgb(55,53,47);
+    --box-bg: rgb(247,246,243);
+    --box-border: rgba(55,53,47,0.16);
+    --link: rgb(56,125,201);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html, body {
+    background:#e8e8e8;
+    font-family:'Noto Sans KR','Inter',sans-serif;
+    color:var(--text);
+    -webkit-font-smoothing:antialiased;
+  }
+  .page {
+    width:297mm; min-height:420mm; background:#fff;
+    margin:16px auto; padding:25.4mm 25.4mm 18mm 25.4mm;
+    position:relative; box-shadow:0 1px 8px rgba(0,0,0,0.15);
+  }
+  h1.doc-title {
+    font-size:24.9pt; font-weight:700;
+    letter-spacing:0; margin:4mm 0 10mm 0;
+  }
+  h2.section {
+    font-size:18.7pt; font-weight:700; color:var(--blue);
+    padding-bottom:2.5mm; border-bottom:1px solid var(--rule);
+    margin:8mm 0 4mm 0;
+  }
+  h2.section:first-of-type { margin-top:0; }
+  h3.sub { font-size:12.4pt; font-weight:700; margin:4mm 0 1.3mm 0; }
+  p.body { font-size:9.8pt; line-height:1.58; color:var(--text-soft); margin:1mm 0; }
+  p.field, p.project-meta {
+    font-size:9.8pt; line-height:1.72; color:var(--text-soft);
+  }
+  p.field b, p.project-meta b { color:var(--text); font-weight:700; }
+  a.link { color:var(--link); text-decoration:underline; text-underline-offset:2px; }
+  .intro-row { display:flex; gap:8mm; align-items:flex-start; margin-top:2mm; }
+  .intro-photo {
+    flex:0 0 53mm; height:60mm; background:var(--box-bg);
+    border:1px solid var(--box-border); border-radius:3px;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; color:var(--text-soft); line-height:1.7;
+  }
+  .intro-photo strong { font-family:'Inter',sans-serif; font-size:13pt; }
+  .intro-photo span { font-size:9pt; color:var(--text-gray); }
+  .intro-text { flex:1; }
+  .intro-text h3.sub:first-child { margin-top:0; }
+  ul.bullets { list-style:none; margin:1mm 0; }
+  ul.bullets > li {
+    font-size:9.8pt; line-height:1.58; color:var(--text-soft);
+    padding-left:6mm; position:relative; margin:0.55mm 0;
+  }
+  ul.bullets > li::before {
+    content:"•"; position:absolute; left:1.5mm; color:var(--text-soft);
+  }
+  .project { margin-top:3.3mm; }
+  .project-title { font-size:12.4pt; font-weight:700; margin-bottom:1mm; }
+  .tag {
+    display:inline-block; font-size:8.4pt; padding:0.45mm 1.8mm;
+    background:var(--box-bg); border:1px solid var(--box-border);
+    border-radius:3px; color:var(--text-soft); margin:0 1mm 0.8mm 0;
+  }
+  .activity-row {
+    display:grid; grid-template-columns:35mm 1fr; column-gap:5mm;
+    padding:2.4mm 0; border-bottom:1px solid var(--box-border);
+  }
+  .activity-row:last-child { border-bottom:0; }
+  .activity-date { font-size:9.3pt; font-weight:600; color:var(--text-gray); padding-top:0.4mm; }
+  .activity-title { font-size:10pt; font-weight:700; color:var(--text); margin-bottom:0.5mm; }
+  .activity-desc { font-size:9.4pt; line-height:1.55; color:var(--text-soft); }
+  .footer {
+    position:absolute; left:25.4mm; right:25.4mm; bottom:9mm;
+    display:flex; justify-content:space-between;
+    font-size:7.5pt; color:var(--text-gray);
+  }
+  @page { size:A3; margin:0; }
+  @media print {
+    html, body { background:#fff; }
+    .page { margin:0; box-shadow:none; page-break-after:always; }
+    .page:last-child { page-break-after:auto; }
+  }
+</style>
+</head>
+<body>
+
+<section class="page">
+  <h1 class="doc-title">이시욱 이력서</h1>
+
+  <h2 class="section">Introduction</h2>
+  <div class="intro-row">
+    <div class="intro-photo">
+      <strong>Backend Developer</strong>
+      <span>이시욱</span>
+    </div>
+    <div class="intro-text">
+      <h3 class="sub">연결 이후의 상태까지 확인하는 Backend Developer</h3>
+      <p class="body">
+        동시 요청과 외부 시스템 연동에서는 성공 응답만으로 작업이 끝났다고 판단하지 않습니다. 뉴스 기반 4컷 만화 생성 서비스에서 작업 식별자와 결과 전달 기준을 맞추고, 같은 이미지 작업이 다시 들어오는 문제를 job ID로 막으면서 비동기 연동에는 중복 실행을 차단하는 기준이 필요하다는 점을 배웠습니다. 이후 Spring Boot 기반 한정 굿즈 구매 시스템을 직접 만들며 주문과 재고가 어긋나는 조건부터 요청을 거절할 위치와 복구 책임까지 검증하고 있습니다.
+      </p>
+      <h3 class="sub">실패를 재현하고 대안을 비교합니다</h3>
+      <p class="body">
+        한 가지 기술을 정답으로 정하기보다 같은 조건에서 대안을 비교합니다. 한정 굿즈 프로젝트에서는 원자적 갱신, 비관적 락, Redis Lua를 비교한 뒤 대기열과 Redis front gate까지 질문을 넓혔습니다. 정합성과 응답 지연뿐 아니라 줄어드는 DB 작업과 새로 생기는 보상 책임을 함께 살피고 있습니다.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="section">Personal Information</h2>
+  <p class="field"><b>NAME</b> : 이시욱</p>
+  <p class="field"><b>EDUCATION</b> : 경북대학교 심화컴퓨터공학 학사, 2020.03 ~ 2026.08 (전공학점 3.64 / 4.3, 총 이수 150학점)</p>
+  <p class="field"><b>GITHUB</b> : <a class="link" href="https://github.com/tldnr1">https://github.com/tldnr1</a></p>
+  <p class="field"><b>EMAIL</b> : lsy3192@gmail.com</p>
+  <p class="field"><b>Assessment / Language</b> : TOPCIT 629 / Level 3 (2026.06.15), OPIc IH (2026.07.11)</p>
+
+  <h2 class="section">Skills</h2>
+  <p class="field"><b>Backend / API</b> :
+    <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">JPA</span><span class="tag">Python</span><span class="tag">FastAPI</span>
+  </p>
+  <p class="field"><b>Data / Cache</b> :
+    <span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">SQL</span><span class="tag">Redis Lua</span>
+  </p>
+  <p class="field"><b>Test / Observability</b> :
+    <span class="tag">JUnit</span><span class="tag">k6</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Docker Compose</span>
+  </p>
+  <p class="field"><b>AI Workflow</b> :
+    <span class="tag">LangGraph</span><span class="tag">VBench</span><span class="tag">diffusers</span>
+  </p>
+
+  <h2 class="section">Project</h2>
+  <div class="project">
+    <div class="project-title">[ 개인 프로젝트 ] 한정 굿즈 구매 시스템</div>
+    <p class="project-meta"><b>일정</b> : 2026.06 ~ 현재</p>
+    <p class="project-meta"><b>본인 역할</b> : Spring Boot Backend / 재고 정합성 / 진입 제어 / 구매 구조 비교</p>
+    <p class="project-meta"><b>참여 인원</b> : 개인 프로젝트</p>
+    <p class="project-meta"><b>기술 스택</b> :
+      <span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">JPA</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">k6</span><span class="tag">Prometheus</span><span class="tag">Grafana</span>
+    </p>
+    <p class="project-meta"><b>프로젝트</b> : 한정 수량 판매에서 동시 요청으로 발생하는 주문과 재고의 불일치를 재현하고, 요청 진입과 구매 처리 위치에 따른 정합성, 응답 지연, 복구 책임을 검증하는 백엔드 프로젝트</p>
+    <ul class="bullets">
+      <li>초기 재고 100개에 1,000개의 동시 요청을 보내 단순 조회 후 차감 방식에서 973개 주문이 성공하고 판매 수량은 97로 남는 oversell과 lost update를 재현</li>
+      <li>같은 구매 API에서 원자적 갱신, 비관적 락, Redis Lua를 교체해 정합성과 p95/p99를 비교하고, 세 방식 모두 oversell과 주문·재고 차이 0 확인</li>
+      <li>Redis ZSET 대기열과 active token을 구현해 재고 차감 전에 구매 경로로 들어오는 요청 수를 제어</li>
+      <li>Redis front gate와 RDB atomic 경로를 정상, 품절, 중복, 저장 실패 조건에서 비교하고, Redis 수락 뒤 DB 저장 실패 시 재고와 처리 상태를 복원하는 보상 흐름 검증</li>
+      <li>로컬 Docker Compose 환경의 24개 실행에서 oversell, 예약 차이, 보상 실패 0을 유지했고, Redis front gate가 RDB atomic보다 p95를 43.5~69.5% 낮춘 결과 확인</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span>이시욱 이력서</span>
+    <span>1</span>
+  </div>
+</section>
+
+<section class="page">
+  <h2 class="section" style="margin-top:0;">Project</h2>
+
+  <div class="project">
+    <div class="project-title">[ 카카오테크 판교 2기 ] 뉴스 기반 4컷 만화 생성 서비스</div>
+    <p class="project-meta"><b>일정</b> : 2025.03 ~ 2025.07</p>
+    <p class="project-meta"><b>본인 역할</b> : AI Backend / 프롬프트 생성 흐름 / 외부 이미지 생성 서버 연동</p>
+    <p class="project-meta"><b>참여 인원</b> : AI 2명, Frontend 1명, Backend 1명, Cloud 3명</p>
+    <p class="project-meta"><b>기술 스택</b> :
+      <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LangGraph</span><span class="tag">PostgreSQL</span><span class="tag">Redis</span><span class="tag">diffusers</span><span class="tag">Colab</span><span class="tag">ngrok</span>
+    </p>
+    <p class="project-meta"><b>서비스</b> : 사용자가 선택한 뉴스를 분석해 컷별 장면과 대사를 구성하고, 외부 GPU 서버에서 표지와 4컷 이미지를 생성해 제공하는 AI 콘텐츠 서비스</p>
+    <ul class="bullets">
+      <li>뉴스 분석 결과를 4컷 만화 프롬프트로 변환하기 위해 컷별 장면, 인물, 대사, 스타일 구조를 정하고 LangGraph 단계로 분리</li>
+      <li>표지와 4컷 이미지 생성 작업을 FastAPI로 수락하고, 작업 식별자와 상태, 결과 URL을 기준으로 진행 상황을 확인할 수 있도록 백엔드 팀원과 응답 구조 조율</li>
+      <li>같은 이미지 작업이 다시 요청되는 이슈를 확인하고, AI 서버가 job ID를 DB에 기록해 이미 처리 중인 요청을 거절하도록 중복 방지 로직 구현</li>
+      <li>외부 GPU 상태 확인과 응답 제한, 이미지별 재시도를 적용해 연결이 불안정한 환경에서도 실패 범위를 나눠 확인할 수 있도록 처리</li>
+      <li>프로젝트 종료 후 이미지 단위 재시도 방식을 모의 환경에서 다시 검증해 성공률이 높아지는 대신 완료 시간이 늘어나는 조건을 확인</li>
+      <li>고정 GPU 인프라가 없는 조건에서 Colab과 ngrok으로 임시 이미지 생성 서버를 연결해 프롬프트 요청부터 결과 반환까지 시연</li>
+    </ul>
+  </div>
+
+  <div class="project">
+    <div class="project-title">[ (주)일만백만 인턴 ] 영상 생성 모델 평가 API 데모</div>
+    <p class="project-meta"><b>일정</b> : 2025.12 ~ 2026.02</p>
+    <p class="project-meta"><b>본인 역할</b> : AI Backend / VBench 평가 API 연동 / 결과 시각화 데모</p>
+    <p class="project-meta"><b>기술 스택</b> :
+      <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">VBench</span><span class="tag">API Integration</span>
+    </p>
+    <p class="project-meta"><b>프로젝트</b> : 여러 이미지 기반 영상 생성 모델의 결과를 정성 판단에만 의존하지 않고, 동일한 평가 지표로 비교할 수 있도록 구성한 사내 평가 데모</p>
+    <ul class="bullets">
+      <li>VBench 평가 코드를 서버 환경에서 호출 가능한 FastAPI로 연결해 서로 다른 영상 생성 모델의 결과를 같은 기준으로 비교</li>
+      <li>왜곡과 움직임 등 평가 결과를 시각화해 모델별 성능 차이를 빠르게 확인할 수 있는 데모 흐름 구성</li>
+      <li>장기 작업에 BackgroundTask를 사용하는 구조의 한계를 확인하고, 요청 수락과 실행을 분리하는 queue/worker 구조를 후속 개선 방향으로 검토</li>
+    </ul>
+  </div>
+
+  <h2 class="section">Education &amp; Activity</h2>
+  <div class="activity-row">
+    <div class="activity-date">2026.06 ~ 현재</div>
+    <div><div class="activity-title">한정 굿즈 구매 시스템 개인 프로젝트</div><div class="activity-desc">동시 요청에서 재고 정합성과 진입 제어 구조를 비교·검증하는 Spring Boot 백엔드 프로젝트 진행</div></div>
+  </div>
+  <div class="activity-row">
+    <div class="activity-date">2026.03 ~ 2026.06</div>
+    <div><div class="activity-title">경북대학교 교내 Python 튜터</div><div class="activity-desc">교내 Python 튜터로 활동</div></div>
+  </div>
+  <div class="activity-row">
+    <div class="activity-date">2025.12 ~ 2026.02</div>
+    <div><div class="activity-title">(주)일만백만 영상 생성 모델 평가 인턴</div><div class="activity-desc">VBench 기반 영상 생성 모델 평가 API와 결과 시각화 데모 구현</div></div>
+  </div>
+  <div class="activity-row">
+    <div class="activity-date">2025.09 ~ 2025.12</div>
+    <div><div class="activity-title">mmWave FMCW 레이더 기반 비접촉 생체신호 추정 전공 프로젝트</div><div class="activity-desc">레이더 데이터 수집과 결측·시간축 보정, 추정 결과 표시 흐름 구현</div></div>
+  </div>
+  <div class="activity-row">
+    <div class="activity-date">2025.01 ~ 2025.08</div>
+    <div><div class="activity-title">카카오테크 판교 2기 인공지능 과정</div><div class="activity-desc">Python 기반 AI 서비스 개발, API 연동, 팀 프로젝트 협업 과정 수료</div></div>
+  </div>
+  <div class="activity-row">
+    <div class="activity-date">2020.03 ~ 2026.08</div>
+    <div><div class="activity-title">경북대학교 심화컴퓨터공학 학사</div><div class="activity-desc">전공학점 3.64 / 4.3 · 총 이수 150학점</div></div>
+  </div>
+
+  <div class="footer">
+    <span>이시욱 이력서</span>
+    <span>2</span>
+  </div>
+</section>
+
+</body>
+</html>
