@@ -45,16 +45,8 @@
   }
   p.field b, p.project-meta b { color:var(--text); font-weight:700; }
   a.link { color:var(--link); text-decoration:underline; text-underline-offset:2px; }
-  .intro-row { display:flex; gap:8mm; align-items:flex-start; margin-top:2mm; }
-  .intro-photo {
-    flex:0 0 53mm; height:60mm; background:var(--box-bg);
-    border:1px solid var(--box-border); border-radius:3px;
-    display:flex; flex-direction:column; align-items:center; justify-content:center;
-    text-align:center; color:var(--text-soft); line-height:1.7;
-  }
-  .intro-photo strong { font-family:'Inter',sans-serif; font-size:13pt; }
-  .intro-photo span { font-size:9pt; color:var(--text-gray); }
-  .intro-text { flex:1; }
+  .intro-row { margin-top:2mm; }
+  .intro-text { width:100%; text-align:left; }
   .intro-text h3.sub:first-child { margin-top:0; }
   ul.bullets { list-style:none; margin:1mm 0; }
   ul.bullets > li {
@@ -99,10 +91,6 @@
 
   <h2 class="section">Introduction</h2>
   <div class="intro-row">
-    <div class="intro-photo">
-      <strong>Backend Developer</strong>
-      <span>이시욱</span>
-    </div>
     <div class="intro-text">
       <h3 class="sub">연결 이후의 상태까지 확인하는 Backend Developer</h3>
       <p class="body">
